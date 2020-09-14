@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/comon0.css">
+</head>
+	<script>
+	$(window).load(function(){  
+             $(".loading").fadeOut()
+            })  
+			
+/****/
+$(document).ready(function(){
+	var whei=$(window).width()
+	$("html").css({fontSize:whei/20})
+	$(window).resize(function(){
+		var whei=$(window).width()
+	 $("html").css({fontSize:whei/20})
+});
+	});
+	</script>
+	<script type="text/javascript" src="js/echarts.min.js"></script> 
+	<script language="JavaScript" src="js/js.js"></script> 
+<body>
+<div class="canvas" style="opacity: .2">
+	<iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
+	</div>
+<div class="loading">
+  <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
+</div>
+<div class="head">
+  <h1>猫狗分类识别</h1>
+  <div class="weather"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span></div>
+	
+	<script>
+var t = null;
+    t = setTimeout(time,1000);//開始运行
+    function time()
+    {
+       clearTimeout(t);//清除定时器
+       dt = new Date();
+		var y=dt.getFullYear();
+		var mt=dt.getMonth()+1;
+		var day=dt.getDate();
+       var h=dt.getHours();//获取时
+       var m=dt.getMinutes();//获取分
+       var s=dt.getSeconds();//获取秒
+       document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"-"+h+"时"+m+"分"+s+"秒";
+       t = setTimeout(time,1000); //设定定时器，循环运行     
+    } 
+
+</script>
+	
+	
+</div>
+<div class="mainbox">
+  <ul class="clearfix">
+    <li>
+      <div class="boxall" style="height: 3.2rem">
+        <div class="alltitle">图</div>
+        <div class="allnav" ><img width="200" src="picture/cat.jpg"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3.2rem">
+        <div class="alltitle">图</div>
+        <div class="allnav"><img width="200" src="picture/cat.jpg"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3.2rem">
+        <div class="alltitle">图</div>
+        <div style="height:100%; width: 100%;">
+        <div class="allnav"><img width="200" src="picture/cat.jpg"></div>
+		  </div>
+        <div class="boxfoot">
+		  </div>
+      </div>
+      <div class="boxall" style="height: 1.57rem;margin-top: -30%;margin-right: -130%;margin-left: 110%;">
+        <div class="alltitle">操作区</div>
+        <!-- <div class="allnav" id="echart2"></div> -->
+        <span >
+          <span style="margin-left:13px;display:inline-block;position:relative;width:43%; height:0.9rem; border:1px solid #06c;border-radius:25px;text-align:center;line-height:0.9rem;background-image:-moz-linear-gradient(top,#06c,#06c);background-image:-webkit-gradient(linear,left top,left bottom, color-stop(0,#06c),color-stop(1,#06c)); ">
+              上传图片
+              <input style="border-radius: 25px;height:32px;position:absolute;z-index:1;left:0px;width:100px;top:0;opacity:0;filter:alpha(opacity=0);cursor:pointer;" type="file" class="upload_file1" id="p1" name="p1" size="1" onchange="ajaxUploadFile(this, '&p=1&prefix=1');">
+          </span>
+        </span>
+    
+        <button class="button2">点击识别</button>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+    <li>
+      <div class="bar">
+        <div class="barbox">
+          <ul class="clearfix">
+            <li class="pulll_left counter">??%</li>
+            <li class="pulll_left counter">??%</li>
+          </ul>
+        </div>
+        <div class="barbox2">
+          <ul class="clearfix">
+            <li class="pulll_left">猫概率 </li>
+            <li class="pulll_left">狗概率</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map">
+        <div class="map1"><img src="picture/lbx.png"></div>
+        <div class="map2"><img src="picture/jt.png"></div>
+        <div class="map3"><img src="picture/map.png"></div>
+        <div class="map5"><img src="picture/cat.jpg"></div>
+        <!-- map_1 -->
+      </div>
+    </li>
+    <li>
+          <div class="boxall" style="height:3.4rem">
+        <div class="alltitle">图</div>
+        <div class="allnav"><img width="200" src="picture/cat.jpg"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3.2rem">
+        <div class="alltitle">图</div>
+        <div class="allnav"><img width="200" src="picture/cat.jpg"></div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: 3rem">
+        <div class="alltitle">图</div>
+        <div class="allnav"><img width="200" src="picture/cat.jpg"></div>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="back"></div>
+
+
+<script type="text/javascript" src="js/china.js"></script> 
+<script type="text/javascript" src="js/area_echarts.js"></script> 
+</body>
+</html>
